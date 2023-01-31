@@ -4,6 +4,7 @@ const middleware = require("./middleware")
 
 router.use(middleware);
 router.get("/", (req, res) => {
+    console.log(req);
    
     // res.sendFile(`${pathdir}/inde.html`);
     res.render("inde",{
