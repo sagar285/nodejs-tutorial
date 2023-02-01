@@ -37,6 +37,17 @@ app.get("/user/:id",async(req,res)=>{
     }    
 })
 
+app.post("/login",async(req,res)=>{
+    try {
+        const useremail = req.body.email;
+        const getemail = await user.findOne({email:useremail})
+        res.send(getemail); 
+    } catch (error) {
+        res.status(404).send(error);
+    }
+  
+})
+
 app.patch("/update/:id",async(req,res)=>{
     try {
         const id=req.params.id;
